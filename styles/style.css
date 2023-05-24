@@ -1,15 +1,39 @@
+:root{
+	--cor-primaria: #1A120B;
+	--cor-secundaria: #D5CEA3;
+	--cor-terciaria: #E5E5CB;
+	--cor-hover: #c9ba5a;
+}
+
 html, body{
 	height: 100%;
 	width: 100%;
 }
 
 .cabecalho {
-	background: #D5CEA3;
+	background: var(--cor-secundaria);
     display: flex;
     flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
 	height: 8%;
+}
+
+.cabecalho__navegacao{
+	display: flex;
+	width: 50%;
+	justify-content: space-evenly;
+}
+
+.cabecalho__titulo{
+	font-size: 1.5rem;
+}
+
+.cabecalho__links--treinos{
+	display: flex;
+	font-size: 1.5rem;
+	border: solid 2px var(--cor-primaria);
+	padding: 1% 3%;
 }
 
 main {
@@ -23,7 +47,7 @@ main {
 }
 .tabela__titulo {
 	font-size: 1.5rem;
-	color: #D5CEA3;
+	color: var(--cor-secundaria);
 	padding: 1%;
 }
 .tabela__elemento {
@@ -33,5 +57,10 @@ main {
 
 footer {
 	height: 7%;
-	background: #E5E5CB;
+	background: var(--cor-terciaria);
+}
+.footer__titulo{
+	height: 100%;
+	text-align: center;
+	padding-top: 2%;
 }
