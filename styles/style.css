@@ -55,6 +55,13 @@ main {
 	text-align: center;
 }
 
+input[type=checkbox]  {
+    border: 0px;
+    width: 25px;
+    height: 30px;
+    vertical-align: middle;
+}
+
 footer {
 	height: 7%;
 	background: var(--cor-terciaria);
@@ -62,5 +69,5 @@ footer {
 .footer__titulo{
 	height: 100%;
 	text-align: center;
-	padding-top: 2%;
+	vertical-align: middle
 }
