@@ -1,17 +1,17 @@
-const exercicio = document.getElementById('teste');
-const listaDeExercicio = JSON.parse(localStorage.getItem("listaDeExercicio")) || []
-console.log(exercicio.innerHTML)
-exercicio.innerHTML = listaDeExercicio.exercicio;
-teste(exercicio)
-
-function teste(exercicio){
+const exercicio = document.querySelector('#teste')
+const listaDeExercicio = JSON.parse(localStorage.getItem("lista")) || []
+exercicio.value = listaDeExercicio.exercicio
+	
 exercicio.addEventListener('focusout', () => {
-    console.log(listaDeExercicio);
-    const elemento = exercicio.innerHTML;
-    const novoItem ={
-        "exercicio": elemento
-    }
-    localStorage.setItem("listaDeExercicio", JSON.stringify(novoItem))
+    const elemento = exercicio.value;
     
-    console.log(exercicio)});
-}
+	const novoItem = {
+        "exercicio": elemento,
+        //"peso": peso
+    }
+	
+    localStorage.setItem("lista", JSON.stringify(novoItem))
+    
+    });
+
+
