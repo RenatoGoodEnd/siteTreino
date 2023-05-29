@@ -5,20 +5,24 @@ const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || {
         }
     ]}
 
-exercicio.forEach(teste)
+for (var i = 0; i < listaDeExercicio.treinoA.length; i++){
+	exercicio[i].value = listaDeExercicio.treinoA[i].treino;
+	console.log(exercicio[i]);
+}
 
-function teste(valor, indice){
-    valor.value = listaDeExercicio.treinoA[indice].exercicio
-    valor.addEventListener('focusout', (e) => {
-        const elemento = valor.value
+exercicio.forEach(salvarECarregarTreino)
+
+function salvarECarregarTreino(valor, indice, arr){
+    arr[indice].addEventListener('focusout', (e) => {
+		const elemento = arr[indice].value;
         const novoItem = 
                 {
-                    "id":indice,
-                    "exercicio": elemento,
+                    "id": indice,
+                    "treino": elemento,
                     "peso": "" 
                 }
-    listaDeExercicio.treinoA.splice(indice, 1, novoItem);
-    localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio))
+        listaDeExercicio.treinoA.splice(indice, 1, novoItem);
+        localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio))
     });
 }
 
