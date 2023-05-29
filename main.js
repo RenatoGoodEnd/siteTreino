@@ -1,35 +1,25 @@
 const exercicio = document.querySelectorAll('.tabela__exercicio')
-const listaDeExercicio = []
+const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || {
+        "treinoA": [
+        {
+        }
+    ]}
 
-
-console.log(exercicio[2])
 exercicio.forEach(teste)
-//exercicio.value = listaDeExercicio.exercicio
 
 function teste(valor, indice){
-    //listaDeExercicio = JSON.parse(localStorage.getItem("lista")) || []
-    //exercicio[indice].value = listaDeExercicio.treinoA.exercicio
-    exercicio[indice].addEventListener('focusout', () => {
-        console.log(exercicio[indice].value)
-  
-
-        const elemento = exercicio[indice].value;
-        
-        const novoItem = {
-            "treinoA": [
+    valor.value = listaDeExercicio.treinoA[indice].exercicio
+    valor.addEventListener('focusout', (e) => {
+        const elemento = valor.value
+        const novoItem = 
                 {
-                    "id": indice,
+                    "id":indice,
                     "exercicio": elemento,
                     "peso": "" 
                 }
-            ]
-            //"exercicio": elemento,
-            //"peso": peso
-        }
-        if(!listaDeExercicio.id){
-        listaDeExercicio.push(novoItem);
-        localStorage.setItem("lista", JSON.stringify(listaDeExercicio))}
-        
-        });
+    listaDeExercicio.treinoA.splice(indice, 1, novoItem);
+    localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio))
+    });
 }
+
 
