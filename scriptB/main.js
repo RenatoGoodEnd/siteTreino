@@ -1,5 +1,5 @@
 const exercicio = document.querySelectorAll('.tabela__exercicio')
-const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || {
+const listaDeExercicio = JSON.parse(localStorage.getItem("exerciciosB")) || {
         "treinoB": [
         {
         }
@@ -25,6 +25,6 @@ function salvarTreino(valor, indice, arr){
                     "treino": elementoTreino,
                 }
         listaDeExercicio.treinoB.splice(indice, 1, novoItem);
-        localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio))
+        localStorage.setItem("exerciciosB", JSON.stringify(listaDeExercicio))
     });
 }
