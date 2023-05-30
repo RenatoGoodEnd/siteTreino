@@ -6,24 +6,25 @@ const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || {
     ]}
 
 for (var i = 0; i < listaDeExercicio.treinoA.length; i++){
-	exercicio[i].value = listaDeExercicio.treinoA[i].treino;
-	console.log(exercicio[i]);
+	const item = listaDeExercicio.treinoA[i].treino;
+	if(item){
+		exercicio[i].value = item;
+	}else{
+		exercicio[i].value = "";
+	}
 }
 
-exercicio.forEach(salvarECarregarTreino)
+exercicio.forEach(salvarTreino)
 
-function salvarECarregarTreino(valor, indice, arr){
+function salvarTreino(valor, indice, arr){
     arr[indice].addEventListener('focusout', (e) => {
-		const elemento = arr[indice].value;
+		const elementoTreino = arr[indice].value;
         const novoItem = 
                 {
                     "id": indice,
-                    "treino": elemento,
-                    "peso": "" 
+                    "treino": elementoTreino,
                 }
         listaDeExercicio.treinoA.splice(indice, 1, novoItem);
         localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio))
     });
 }
-
-

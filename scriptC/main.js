@@ -1,0 +1,30 @@
+const exercicio = document.querySelectorAll('.tabela__exercicio')
+const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || {
+        "treinoC": [
+        {
+        }
+    ]}
+
+for (var i = 0; i < listaDeExercicio.treinoC.length; i++){
+	const item = listaDeExercicio.C[i].treino;
+	if(item){
+		exercicio[i].value = item;
+	}else{
+		exercicio[i].value = "";
+	}
+}
+
+exercicio.forEach(salvarTreino)
+
+function salvarTreino(valor, indice, arr){
+    arr[indice].addEventListener('focusout', (e) => {
+		const elementoTreino = arr[indice].value;
+        const novoItem = 
+                {
+                    "id": indice,
+                    "treino": elementoTreino,
+                }
+        listaDeExercicio.treinoC.splice(indice, 1, novoItem);
+        localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio))
+    });
+}
