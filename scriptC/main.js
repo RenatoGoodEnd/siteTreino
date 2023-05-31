@@ -6,7 +6,7 @@ const listaDeExercicio = JSON.parse(localStorage.getItem("exerciciosC")) || {
     ]}
 
 for (var i = 0; i < listaDeExercicio.treinoC.length; i++){
-	const item = listaDeExercicio.C[i].treino;
+	const item = listaDeExercicio.treinoC[i].treino;
 	if(item){
 		exercicio[i].value = item;
 	}else{
