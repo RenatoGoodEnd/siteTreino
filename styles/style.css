@@ -58,6 +58,12 @@ main {
 .tabela__elemento {
 	padding: 0.5rem 1rem;
 	text-align: center;
+	vertical-align: middle;
+}
+
+.tabela__peso{
+	width: 3.7rem;
+	height: 2.5rem;
 }
 
 input[type=checkbox]  {
