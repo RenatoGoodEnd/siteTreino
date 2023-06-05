@@ -1,3 +1,4 @@
+//iniciando versão 2.0
 const exercicio = document.querySelectorAll('.tabela__exercicio')
 const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || {
         "treinoA": [
