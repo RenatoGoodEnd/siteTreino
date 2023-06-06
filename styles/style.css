@@ -63,9 +63,6 @@ main {
 
 .tabela__exercicio{
 	resize: none;
-	white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .tabela__peso{
