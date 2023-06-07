@@ -1,9 +1,24 @@
 {
-    "treinoA": [
-        {
-            "id":1,
-            "exercicio": "",
-            "peso": "" 
+    "treinos":{
+        "treinoA": {
+            "id1":{
+                "exercicio": "",
+                "peso": ""
+            },
+            "id2":{
+                "exercicio": "",
+                "peso": ""
+            }
+        },
+        "treinoB": {
+            "id1":{
+                "exercicio": "",
+                "peso": ""
+            },
+            "id2":{
+                "exercicio": "",
+                "peso": ""
+            }
         }
-    ]
+    }
 }
