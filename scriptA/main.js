@@ -1,9 +1,7 @@
-const exercicio = document.querySelectorAll('.tabela__exercicio')
-const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || {
-        "treinoA": [
-        {
-        }
-    ]}
+const exercicio = document.querySelectorAll('.tabela__exercicio');
+const peso = document.querySelectorAll('tabela__peso');
+const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || [];
+const lista = document.querySelectorAll('[data-lista]')
 
 for (var i = 0; i < listaDeExercicio.treinoA.length; i++){
 	const item = listaDeExercicio.treinoA[i].treino;
@@ -14,24 +12,5 @@ for (var i = 0; i < listaDeExercicio.treinoA.length; i++){
 	}
 }
 
-function digitar(e){
-    if(e.keyCode == 13){
-        e.preventDefault();
-        exercicio[e.target.tabIndex + 1].focus();
-    }
-}
-
-exercicio.forEach(salvarTreino)
-
-function salvarTreino(valor, indice, arr){
-    arr[indice].addEventListener('focusout', (e) => {
-		const elementoTreino = arr[indice].value;
-        const novoItem = 
-                {
-                    "id": indice,
-                    "treino": elementoTreino,
-                }
-        listaDeExercicio.treinoA.splice(indice, 1, novoItem);
-        localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio))
-    });
-}
+exercicio.forEach(salvarTreino);
+peso.forEach(salvarTreino);
