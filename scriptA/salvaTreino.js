@@ -1,23 +1,29 @@
 function salvarTreino(valor, indice, arr){
-    arr[indice].addEventListener('focusout', () => {
+    valor.addEventListener('focusout', () => {
         //console.log(lista.value)
-		const elementoTreino = exercicio.value;
-        const novoId = valor.id
-        const existe = listaDeExercicio.find(elemento => elemento.id === novoId)
+		const elementoTreino = valor.value;
+        const novaLista = listagem.innerHTML;
+        const existe = listaDeExercicio.find(elemento => elemento.id === indice + novaLista)
+        // const nome = ;
+        // console.log(arr)
+         
+        
 
         if(existe){
+            console.log(indice + novaLista)
+            console.log(existe)
             listaDeExercicio[indice].treino = elementoTreino
         }else{
             // const elementoPeso = listaDeExercicio[0].peso;
             // const elementoLista = listaDeExercicio[0].lista;
             const novoItem = 
                     {
-                        "lista": "A",
-                        "id": indice,
+                        "lista": listagem.innerHTML,
+                        "id": indice + novaLista,
                         "treino": elementoTreino,
                         "peso": ""
                     }
-            listaDeExercicio.splice(indice, 1, novoItem);
+            listaDeExercicio.push(novoItem);
         }
         localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio));
     });

@@ -1,9 +1,10 @@
 const exercicio = document.querySelectorAll('.tabela__exercicio');
-const peso = document.querySelectorAll('tabela__peso');
+const peso = document.querySelectorAll('.tabela__peso');
 const lista = document.querySelectorAll('[data-lista]')
-//console.log(lista[0].innerHTML)
+const listagem = document.querySelector("#treino")
+console.log(listagem.innerHTML)
 const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || [{
-	"lista": "",
+	"lista": listagem.innerHTML,
 	"id": 0,
 	"treino": "",
 	"peso": ""
