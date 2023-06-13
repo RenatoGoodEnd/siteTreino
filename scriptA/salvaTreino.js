@@ -1,9 +1,9 @@
 function salvarTreino(valor, indice, arr){
     arr[indice].addEventListener('focusout', () => {
-        console.log(lista.value)
-		const elementoTreino = exercicio[indice].value;
+        //console.log(lista.value)
+		const elementoTreino = exercicio.value;
         const novoId = valor.id
-        const existe = listaDeExercicio[indice].find(elemento => elemento.id === novoId)
+        const existe = listaDeExercicio.find(elemento => elemento.id === novoId)
 
         if(existe){
             listaDeExercicio[indice].treino = elementoTreino
