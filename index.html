@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="cabecalho">
-        <h1 class="cabecalho__titulo">TREINO <span id="treino">D</span></h1>
+        <h1 class="cabecalho__titulo">TREINO <span id="treino">A</span></h1>
         <nav class="cabecalho__navegacao">
             <a class="cabecalho__links--treinos" href="index.html">A</a>
             <a class="cabecalho__links--treinos" href="./pages/treinoB.html">B</a>
@@ -27,8 +27,8 @@
                     <th class="tabela__titulo"></th>
                 </tr>
             </thead>
-            <tbody>
-				<tr>
+            <tbody id="tabela__elemento">
+								<tr>
                     <td class="tabela__elemento">
                         <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="0" class="tabela__exercicio" cols="17" rows="2"></textarea>
                     </td>
@@ -61,7 +61,7 @@
                         <input type="checkbox">
                     </td>
                 </tr>
-                <tr>
+               <!--  <tr>
                     <td class="tabela__elemento">
                         <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="3" class="tabela__exercicio" cols="17" rows="2"></textarea>
                     </td>
@@ -126,7 +126,7 @@
                     <td class="tabela__elemento">
                         <input type="checkbox">
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
 
@@ -136,7 +136,8 @@
         <p class="footer__titulo">RenatoGoodEnd Treinos v2.0</p>
     </footer>
     
-    <!-- <script src="./scriptA/tabelaPeso.js"></script> -->
+    <!-- <script src="./scriptA/tabelaPeso.js"></script> 
+	<script src="./scriptA/constroiPagina.js"></script> -->
     <script src="./scriptA/salvaTreino.js"></script>
     <script src="./scriptA/funcionaEnter.js"></script>
     <script src="./scriptA/main.js"></script>
