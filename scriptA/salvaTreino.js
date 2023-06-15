@@ -3,7 +3,8 @@ function salvarTreino(valor, indice){
         //console.log(lista.value)
         const elementoPeso = peso[indice].value;
 		const elementoTreino = exercicio[indice].value;
-        const existe = listaDeExercicio.find(elemento => elemento.id === indice + letraDaLista);
+        const existe = listaDeExercicio.find(elemento => 
+            elemento.id === indice && elemento.lista === letraDaLista);
  
         if(existe){
             //console.log(indice + letraDaLista);
