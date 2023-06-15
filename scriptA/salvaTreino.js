@@ -16,7 +16,7 @@ function salvarTreino(valor, indice){
             const novoItem = 
                     {
                         "lista": letraDaLista,
-                        "id": indice + letraDaLista,
+                        "id": indice,
                         "treino": elementoTreino,
                         "peso": elementoPeso
                     }
