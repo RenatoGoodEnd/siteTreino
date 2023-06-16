@@ -1,23 +1,21 @@
 const botaoAdd = document.getElementById("addTreino");
+
 const identificadorDeLista = document.querySelector("#treino");
 const letraDaLista = identificadorDeLista.innerHTML;
-const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || [{
-		"lista": letraDaLista,
-		"id": 0,
-		"treino": "",
-		"peso": ""
-	}];
+const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || [];
 
 const listaFiltrada = novaLista(letraDaLista);
 const elementoDoTreino = document.getElementById("tabela__elemento");
-construirPagina(listaFiltrada)
+construirPagina(listaFiltrada);
 
 const exercicio = document.querySelectorAll('.tabela__exercicio');
 const peso = document.querySelectorAll('.tabela__peso');
+const excluir = document.querySelectorAll('.btn__exTreino');
 
 exercicio.forEach(salvarTreino)
 peso.forEach(salvarTreino)
-
+excluir.forEach(excluirTreino)
+	
 botaoAdd.addEventListener('click', () => {
 	const novoItem2 = 
 	{
@@ -25,31 +23,20 @@ botaoAdd.addEventListener('click', () => {
 		"id": listaFiltrada.length,
 		"treino": "",
 		"peso": ""
-	}
-	elementoDoTreino.innerHTML += `
-        <tr>
-        <td class="tabela__elemento">
-            <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="${novoItem2.id}" class="tabela__exercicio" cols="15" rows="2">
-            ${novoItem2.treino}
-            </textarea>
-        </td>
-        <td class="tabela__elemento">
-            <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1" value="${novoItem2.peso}">
-        </td>
-        <td class="tabela__check">
-            <input type="checkbox">
-        </td>
-        <td class="tabela__btn container__btn--exTreino">
-            <input type="button" class="btn btn__exTreino" value="🗑️">
-        </td>
-    </tr>
-        `
-			
+	}		
 	listaDeExercicio.push(novoItem2);
-	listaFiltrada.push(novoItem2);
 	localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio));
+	location.reload();
 	});
 
 function novaLista(testador){
 	return listaDeExercicio.filter(elemento => {return elemento.lista === testador});
+}
+
+function excluirTreino(treinoExcluido){
+	treinoExcluido.addEventListener('click', () => {
+	console.log(treinoExcluido.offsetParent.parentElement);
+	
+	});
+	
 }
