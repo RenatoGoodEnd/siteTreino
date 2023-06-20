@@ -5,6 +5,7 @@ const letraDaLista = identificadorDeLista.innerHTML;
 const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || [];
 
 const listaFiltrada = novaLista(letraDaLista);
+console.log(listaFiltrada)
 const elementoDoTreino = document.getElementById("tabela__elemento");
 construirPagina(listaFiltrada);
 
@@ -30,13 +31,24 @@ botaoAdd.addEventListener('click', () => {
 	});
 
 function novaLista(testador){
-	return listaDeExercicio.filter(elemento => {return elemento.lista === testador});
+	const listaDoTestador = listaDeExercicio.filter(elemento => {return elemento.lista === testador});
+	const listaSemTestador = listaDeExercicio.filter(elemento => {return elemento.lista != testador});
+	console.log(listaSemTestador)
+	console.log(listaDoTestador)
+	
+	return listaDoTestador.map((lista, index) => {
+	return {...lista, id: listaDoTestador.id = index}});
 }
 
-function excluirTreino(treinoExcluido){
+
+
+function excluirTreino(treinoExcluido, index){
 	treinoExcluido.addEventListener('click', () => {
-	console.log(treinoExcluido.offsetParent.parentElement);
-	
-	});
-	
+	//listaDeExercicio.splice(index, 1);
+	const excluir = listaDeExercicio.filter(elemento => 
+             (elemento.lista === letraDaLista && elemento.id != index) || elemento.lista != letraDaLista);
+	//console.log(excluir);
+	localStorage.setItem("exercicios", JSON.stringify(excluir));
+	location.reload();
+	});	
 }
