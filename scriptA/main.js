@@ -5,7 +5,8 @@ const letraDaLista = identificadorDeLista.innerHTML;
 const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || [];
 
 const listaFiltrada = novaLista(letraDaLista);
-console.log(listaFiltrada)
+//console.log(listaFiltrada)
+listaFiltrada.forEach(teste)
 const elementoDoTreino = document.getElementById("tabela__elemento");
 construirPagina(listaFiltrada);
 
@@ -32,22 +33,30 @@ botaoAdd.addEventListener('click', () => {
 
 function novaLista(testador){
 	const listaDoTestador = listaDeExercicio.filter(elemento => {return elemento.lista === testador});
-	const listaSemTestador = listaDeExercicio.filter(elemento => {return elemento.lista != testador});
-	console.log(listaSemTestador)
-	console.log(listaDoTestador)
 	
+	//Limpa lista da lista do exercicio da pagina para reorganizar o id
+	const listaSemTestador = listaDeExercicio.filter(elemento => {return elemento.lista != testador});
+	localStorage.setItem("exercicios", JSON.stringify(listaSemTestador));
+	
+	//
 	return listaDoTestador.map((lista, index) => {
 	return {...lista, id: listaDoTestador.id = index}});
+}
+
+
+function teste(listaH){
+	const listaDeExercicio2 = JSON.parse(localStorage.getItem("exercicios"))
+	listaDeExercicio2.push(listaH);
+	localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio2));
 }
 
 
 
 function excluirTreino(treinoExcluido, index){
 	treinoExcluido.addEventListener('click', () => {
-	//listaDeExercicio.splice(index, 1);
 	const excluir = listaDeExercicio.filter(elemento => 
              (elemento.lista === letraDaLista && elemento.id != index) || elemento.lista != letraDaLista);
-	//console.log(excluir);
+	console.log(treinoExcluido);
 	localStorage.setItem("exercicios", JSON.stringify(excluir));
 	location.reload();
 	});	
