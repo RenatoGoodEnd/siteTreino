@@ -1,19 +1,15 @@
 function salvarTreino(valor, indice){
     valor.addEventListener('focusout', () => {
-        //console.log(lista.value)
+		const listaDeExercicioAtualizada = JSON.parse(localStorage.getItem("exercicios")) || [];
         const elementoPeso = peso[indice].value;
-		const elementoTreino = exercicio[indice].value;
-        const existe = listaDeExercicio.find(elemento => 
-            elemento.id === indice && elemento.lista === letraDaLista);
+		const elementoTreino = exercicio[indice].value.trim();
+        const existe = listaDeExercicioAtualizada.find(elemento => 
+             elemento.lista === letraDaLista && elemento.id === indice);
  
         if(existe){
-            //console.log(indice + letraDaLista);
-            //console.log(existe);
             existe.treino = elementoTreino;
             existe.peso = elementoPeso;
         }else{
-            // const elementoPeso = listaDeExercicio[0].peso;
-            // const elementoLista = listaDeExercicio[0].lista;
             const novoItem = 
                     {
                         "lista": letraDaLista,
@@ -21,16 +17,8 @@ function salvarTreino(valor, indice){
                         "treino": elementoTreino,
                         "peso": elementoPeso
                     }
-            listaDeExercicio.push(novoItem);
+          listaDeExercicioAtualizada.push(novoItem);
         }
-        localStorage.setItem("exercicios", JSON.stringify(listaDeExercicio));
+        localStorage.setItem("exercicios", JSON.stringify(listaDeExercicioAtualizada));
     });
 }
-
-
-
-// se existe elemento na lista listaDeExercicio.id === valor.id
-
-// se sim atualiza o item com o que consta no valor recebido
-
-// se não cria um novo item completo
