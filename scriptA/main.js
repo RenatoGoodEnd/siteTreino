@@ -10,6 +10,12 @@ const elementoDoTreino = document.getElementById("tabela__elemento");
 
 construirPagina(listaFiltrada);
 
+const pagina = document.querySelector(".mainNormal")
+console.log(pagina.className)
+if (listaFiltrada.length > 8 ){
+	pagina.className = "mainAuto";
+}
+
 const exercicio = document.querySelectorAll('.tabela__exercicio');
 const peso = document.querySelectorAll('.tabela__peso');
 const excluir = document.querySelectorAll('.btn__exTreino');

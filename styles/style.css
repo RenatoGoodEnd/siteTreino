@@ -43,10 +43,14 @@ header{
 	background: var(--cor-hover);
 }
 
-main {
-	height: auto;
+.mainNormal {
+	height: 100%;
 	width: 100%;
 	background: #1A120B;
+}
+
+.mainAuto{
+	height: auto;
 }
 
 .tabela {
