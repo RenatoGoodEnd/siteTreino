@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="cabecalho">
-        <h1 class="cabecalho__titulo">TREINO C</h1>
+        <h1 class="cabecalho__titulo">TREINO <span id="treino">C</span></h1>
         <nav class="cabecalho__navegacao">
             <a class="cabecalho__links--treinos" href="../index.html">A</a>
             <a class="cabecalho__links--treinos" href="treinoB.html">B</a>
@@ -18,7 +18,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="mainNormal">
         <table class="tabela">
             <thead>
                 <tr>
@@ -27,115 +27,23 @@
                     <th class="tabela__titulo"></th>
                 </tr>
             </thead>
-            <tbody>
-				<tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="0" class="tabela__exercicio" cols="17" rows="2" ></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="1" class="tabela__exercicio" cols="17" rows="2"></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="2" class="tabela__exercicio" cols="17" rows="2"></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="3" class="tabela__exercicio" cols="17" rows="2"></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="4" class="tabela__exercicio" cols="17" rows="2"></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="5" class="tabela__exercicio" cols="17" rows="2"></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="6" class="tabela__exercicio" cols="17" rows="2"></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="7" class="tabela__exercicio" cols="17" rows="2"></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="tabela__elemento">
-                        <textarea name="Exercício" onkeypress="digitar(event)" tabIndex="8" class="tabela__exercicio" cols="17" rows="2"></textarea>
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="number" name="Peso" class="tabela__peso" cols="2" rows="1">
-                    </td>
-                    <td class="tabela__elemento">
-                        <input type="checkbox">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <tbody id="tabela__elemento">
 
+        </tbody>
+        </table>
+		<div class="container__btn">
+			<input type="button" class="btn btn__addTreino" id="addTreino" value="➕ ADICIONAR TREINO">
+		</div>
     </main>
     
     <footer>
-        <p class="footer__titulo">RenatoGoodEnd Treinos</p>
+        <p class="footer__titulo">RenatoGoodEnd Treinos v2.0</p>
     </footer>
-    <script src="../scriptC/main.js"></script>
-    <script src="../scriptC/tabelaPeso.js"></script>
+    
+    <!-- <script src="./scriptA/tabelaPeso.js"></script> -->
+	<script src="../scriptA/constroiPagina.js"></script> 
+    <script src="../scriptA/salvaTreino.js"></script>
+    <script src="../scriptA/funcionaEnter.js"></script>
+    <script src="../scriptA/main.js"></script>
 </body>
 </html>

@@ -1,9 +1,14 @@
-{
-    "treinoA": [
-        {
-            "id":1,
-            "exercicio": "",
-            "peso": "" 
-        }
-    ]
-}
+[
+    {
+        "lista": "A",
+        "id": 1,
+        "exercicio": "",
+        "peso": ""
+    },
+    {
+        "lista": "A",
+        "id": 2,
+        "exercicio": "",
+        "peso": ""
+    }
+]
