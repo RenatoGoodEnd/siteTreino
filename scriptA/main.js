@@ -1,7 +1,7 @@
 const botaoAdd = document.getElementById("addTreino");
 const identificadorDeLista = document.querySelector("#treino");
 const letraDaLista = identificadorDeLista.innerHTML;
-const listaDeExercicio = JSON.parse(localStorage.getItem("exercicios")) || [];
+const listaDeExercicio = JSON.parse(localStorage.getItem("listaExercicios")) || [];
 const listaFiltrada = novaLista(letraDaLista);
 
 listaFiltrada.forEach(ordenarId)
@@ -32,9 +32,9 @@ botaoAdd.addEventListener('click', () => {
 		"treino": "",
 		"peso": ""
 	}
-	const listaDeExercicioA = JSON.parse(localStorage.getItem("exercicios")) || [];
+	const listaDeExercicioA = JSON.parse(localStorage.getItem("listaExercicios")) || [];
 	listaDeExercicioA.push(novoItem2);
-	localStorage.setItem("exercicios", JSON.stringify(listaDeExercicioA));
+	localStorage.setItem("listaExercicios", JSON.stringify(listaDeExercicioA));
 	location.reload();
 	});
 
@@ -44,7 +44,7 @@ function novaLista(testador){
 //___________________________________________________________________________________________________
 	//Limpa lista da lista do exercicio da pagina para reorganizar o id
 	const listaSemTestador = listaDeExercicio.filter(elemento => {return elemento.lista != testador});
-	localStorage.setItem("exercicios", JSON.stringify(listaSemTestador));
+	localStorage.setItem("listaExercicios", JSON.stringify(listaSemTestador));
 //___________________________________________________________________________________________________
 	
 	//Ordenando ID da listaFiltrada para construcao da pagina
@@ -54,9 +54,9 @@ function novaLista(testador){
 
 //Salva a lista com a ordem certa dos IDs
 function ordenarId(listaAposFiltro){
-	const listaProvisoria = JSON.parse(localStorage.getItem("exercicios"))
+	const listaProvisoria = JSON.parse(localStorage.getItem("listaExercicios"))
 	listaProvisoria.push(listaAposFiltro);
-	localStorage.setItem("exercicios", JSON.stringify(listaProvisoria));
+	localStorage.setItem("listaExercicios", JSON.stringify(listaProvisoria));
 }
 
 
@@ -64,11 +64,11 @@ function ordenarId(listaAposFiltro){
 function excluirTreino(treinoExcluido, index){
 	//Cria uma lista sem o Item a ser excluido e atualiza a lista do LS
 	treinoExcluido.addEventListener('click', () => {
-	const listaDeExercicioB = JSON.parse(localStorage.getItem("exercicios")) || [];
+	const listaDeExercicioB = JSON.parse(localStorage.getItem("listaExercicios")) || [];
 	const excluir = listaDeExercicioB.filter(elemento => 
              (elemento.lista === letraDaLista && elemento.id != index) || elemento.lista != letraDaLista);
 	//console.log(treinoExcluido);
-	localStorage.setItem("exercicios", JSON.stringify(excluir));
+	localStorage.setItem("listaExercicios", JSON.stringify(excluir));
 	
 	//recarrega a pagina
 	location.reload();

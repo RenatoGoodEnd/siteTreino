@@ -1,6 +1,6 @@
 function salvarTreino(valor, indice){
     valor.addEventListener('focusout', () => {
-		const listaDeExercicioAtualizada = JSON.parse(localStorage.getItem("exercicios")) || [];
+		const listaDeExercicioAtualizada = JSON.parse(localStorage.getItem("listaExercicios")) || [];
         const elementoPeso = peso[indice].value;
 		const elementoTreino = exercicio[indice].value.trim();
         const existe = listaDeExercicioAtualizada.find(elemento => 
@@ -19,6 +19,6 @@ function salvarTreino(valor, indice){
                     }
           listaDeExercicioAtualizada.push(novoItem);
         }
-        localStorage.setItem("exercicios", JSON.stringify(listaDeExercicioAtualizada));
+        localStorage.setItem("listaExercicios", JSON.stringify(listaDeExercicioAtualizada));
     });
 }
